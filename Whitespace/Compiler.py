@@ -42,8 +42,6 @@ class Compiler:
         import re
         return re.sub("[^ ¥t¥n]", "", src)
 
-
-
     def __step(self):
         NUM = "[ ¥t]+¥n"
         LABEL = NUM
