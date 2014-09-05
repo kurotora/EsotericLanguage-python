@@ -67,12 +67,18 @@ class ProgramError(Exception):
 
 
 if __name__ == "__main__":
-    text = ""
+#    text = ""
+#    try:
+#        with open(sys.argv[1]) as f:
+#            for l in f:
+#                text += l
+#    except:
+#        for l in sys.stdin.readlines():
+#            text += l
+    # リスト内包で書いた
     try:
         with open(sys.argv[1]) as f:
-            for l in f:
-                text += l
+            text = ''.join([line for line in f])
     except:
-        for l in sys.stdin.readlines():
-            text += l
+        text = ''.join([line for line in sys.stdin.readlines()])
     Brainf_ck(text).run()
